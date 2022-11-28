@@ -4,12 +4,11 @@ const Schema = mongoose.Schema
 const drinkSchema = new Schema(
     {
         name: { type: String, required: true },
-        price: { type: String, required: true },
+        year: { type: String, required: true },
         image: { type: String, default: 'https://www.equalserving.com/images/es1scplugin/image-not-available' }
     }
 )
 
-const Drink = mongoose.model('Drink', drinkSchema)
+const anime = mongoose.model('Anime', animeSchema)
 
-// export the Drink model to be accessed in 'index.js'
-module.exports = Drink
+module.exports = anime

@@ -3,37 +3,37 @@ const db = require("./")
 const initial_anime = [
     {
         name: 'Naruto',
-        price: 132,
+        Year: 2002,
         image: 'https://imgur.com/Va5iIw5'
     },
     {
         name: 'One Piece',
-        price: 68,
+        Year: 1999,
         image: 'https://imgur.com/XV2aPa2'
     },
     {
         name: 'Dragon Ball Super',
-        price: 1,
+        Year: 2015,
         image: 'https://imgur.com/rLOXFRI'
     },
     {
         name: 'Attack On Titan',
-        price: 11,
+        Year: 2013,
         image: 'https://imgur.com/a7rmkoS'
     },
     {
         name: 'Black Clover',
-        price: 202,
+        Year: 2017,
         image: 'https://imgur.com/FLucOLr'
     },
     {
         name: 'My Hero Acedamia',
-        price: 2,
+        Year: 2016,
         image: 'https://imgur.com/yaoK0Dg'
     },
     {
         name: 'Demon Slayer',
-        price: 43,
+        Year: 2019,
         image: 'https://imgur.com/qAhA7pi'
     }
 ]
@@ -51,6 +51,7 @@ db.Anime.deleteMany({}, (err, Animes) => {
                 console.log('Error occured in insertMany', err)
             } else {
                 console.log('Created', animes.length, "animes")
+                process.exit()
             }
         })
     }

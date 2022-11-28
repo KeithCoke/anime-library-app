@@ -3,15 +3,16 @@
 // +-+-+-+-+-+-+-+-+-+-+-+-+
 const express = require('express');
 const app = express();
+const methodOverride = require('method-override');
+const port = 3000
 
 const db = require('./models')
 const anime = require('./models')
-const port = 3000
 
 // +-+-+-+-+-+-+-+-+-+-+
 // |M|I|D|D|L|E|W|A|R|E|
 // +-+-+-+-+-+-+-+-+-+-+
-
+app.use(express.static('public'))
 
 
 
@@ -25,7 +26,7 @@ app.get('/anime', (req, res) => {
 
        
             res.render('home.ejs', {
-				drinks: drinks,
+				animes: animes,
 				tabTitle: 'Master Branch'
 			})
         })
