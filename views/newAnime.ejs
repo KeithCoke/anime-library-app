@@ -1,0 +1,36 @@
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include ('./partials/stars.ejs') %>
+    <a href="/"><button>Home</button></a>
+        <div id="flex-container">
+            <form action="/location/" method="post">
+                <label for="name">Name:</label>
+                <input type="text" name="name"required />
+                <label for="affiliation">Affiliation:</label>
+                <input type="text" name="affiliation" value="Unaffiliated" />
+                <label for="classification">Classification:</label>
+                <select name="classification" >
+                    <option value="station">Station</option>
+                    <option value="moon">Moon</option>
+                    <option value="planet">Planet</option>
+                    <option value="solar system">Solar System</option>
+                </select>
+                <label for="status">Status:</label>
+                <select name="status">
+                    <option value="unknown">Unknown</option>
+                    <option value="hospitable">Hospitable</option>
+                    <option value="inhospitable">Inhospitable</option>
+               </select>
+                <label for="visited">Visited:</label>
+                <input type="checkbox" name="visited" />
+                <label for="image">Image:</label>
+                <input type="text" name="image" value="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" />
+                <button type="submit">Create Location</button>
+            </form>
+        </div>
+</body>
+
+</html>

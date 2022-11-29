@@ -8,7 +8,7 @@ require("dotenv").config();
 
 const port = process.env.PORT
 
-const db = require('./db')
+const db = require('./models')
 // const anime = require('./models/anime')
 
 // +-+-+-+-+-+-+-+-+-+-+
@@ -23,7 +23,7 @@ app.use(express.static('public'))
 // +-+-+-+-+-+-+
 
 app.get('/', (req, res)=> {
-    res.render('index.ejs')
+    res.render('index.ejs',)
 })
 //  app.get('/anime', (req, res) => {
 // 	db.anime.find({}, (err, animes) => {

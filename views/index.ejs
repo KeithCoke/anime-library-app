@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include ('./partials/head.ejs/') %>
 </head>
 <body>
     <div class="body-overlay">
-    <h1>AniLibrary</h1>
+        <header>
+            <h1>AniLibrary</h1>
+            <ul>
+                <li><a href="/pub">master branch</a></li>
+                <li><a href="/new">git add -an item</a></li>
+            </ul>
+        </header>
+        <main>
+            <div>
+              <h1>Anime</h1>
+              <ul>
+                <% for (let i=0; i < anime.length; i++) { %>
+                  <li>
+                    <a href="/models/seed.js/<% anime[i]._id %>">
+                      <%= animes[i].name %>
+                    </a>
+                  </li>
+                  <% } %>
+              </ul>
+            </div>
+    
+            
+          </main>
 </div>
 </body>
 </html>
