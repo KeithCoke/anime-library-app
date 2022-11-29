@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+        <link rel="stylesheet" href="/public/styles/" />
+</head>
+
+<body>
+        <div class="flex-container">
+            <a href="/"><button>Home</button></a>
+            <a href="/anime/<%= anime._id %>/edit"><button>Edit Anime</button></a>
+            <form action="/anime/<%= anime._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete Anime</button>
+            </form>
+        </div>
+        <main class="flex-container">
+            <div id="anime" class="model-object">
+                <img src=<%=anime.image %> width="300"/>
+                <h1>
+                    <%=anime.name%>
+                </h1>
+                <p>
+                    Year: <%= anime.year %>
+                </p>
+               
+            </div>
+        </main>
+</body>
+
+</html>

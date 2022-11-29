@@ -7,25 +7,34 @@
     <div class="body-overlay">
         <header>
             <h1>AniLibrary</h1>
-            <ul>
+            <nav>
                 <li><a href="/pub">master branch</a></li>
+                <a href="/animes/new"><button>New Anime</button></a>
                 <li><a href="/new">git add -an item</a></li>
-            </ul>
+            </nav>
         </header>
         <main>
-            <div>
-              <h1>Anime</h1>
-              <ul>
-                <% for (let i=0; i < anime.length; i++) { %>
-                  <li>
-                    <a href="/models/seed.js/<% anime[i]._id %>">
-                      <%= animes[i].name %>
-                    </a>
-                  </li>
-                  <% } %>
-              </ul>
-            </div>
+            
+            <div class="flex-container">
+                <aside id="locations-menu" class="close-menu">
+                    <ul>
+                        <% for (let anime of animes) { %>
+                            <a href="/anime/<%= anime._id %>">
+                                <li class="db-object">
+                                    <h3>
+                                        <%= anime.name %>,
+                                    </h3>
+                                    <%= anime.affiliation %>
+                                </li>
+                            </a>
+                            <% } %>
+                    </ul>
+                </aside>
     
+                <div id="title">
+                    <h1>Final Frontier</h1>
+                    <h3>A Star Trek Journey</h3>
+                </div>
             
           </main>
 </div>

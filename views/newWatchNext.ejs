@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include ('./partials/stars.ejs') %>
+    <a href="/"><button>Home</button></a>
+    <div id="flex-container">
+        <form action="/watchNext/" method="post">
+            <label for="title">Title:</label>
+            <input type="text" name="title"/>
+            <label for="content">Content:</label>
+            <textarea name="content"></textarea>
+            <button type="submit">Watch Next</button>
+        </form>
+    </div>
+</body>
+
+</html>

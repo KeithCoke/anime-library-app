@@ -38,22 +38,77 @@ const initial_anime = [
     }
 ]
 
+const initial_watch = [
+    {   title: "Dragon Ball",
+       description: 4513.3
+    },
+    {
+        title: "Bleach",
+       description: 4523.3
+    },
+    {
+        title: "Promise NeverLand",
+       description: 4524.2
+    },
+    {
+        title: "Soul Eater",
+       description: 4525.6
+    },
+    {
+        title: "Fire Force",
+       description: 4040.7
+    },
+    {
+        title: "Vinland Saga",
+       description: 4040.9
+    },
+    {
+        title: "Mob psycho",
+       description: 4041.7
+    },
+    {
+        title: "Neon Genisis",
+       description: 3842.3
+    },
+    {
+        title: "Seven Deadly Sins",
+        description: efwef
+    },
+    {
+        title: "Hunter x Hunter",
+       description: 3843.4
+    },
+]
 
 
-db.Anime.deleteMany({}, (err, Animes) => {
+db.anime.deleteMany({}, (err, animes) => {
     if (err) {
         console.log('Error occured in remove', err)
     } else {
-        console.log('Removed all anime')
+        console.log('Removed all animes')
 
-        db.Anime.insertMany(initial_anime, (err, animes) => {
+        db.anime.insertMany(initial_anime, (err, animes) => {
             if (err) {
                 console.log('Error occured in insertMany', err)
             } else {
                 console.log('Created', animes.length, "animes")
-                process.exit()
             }
         })
     }
 })
 
+db.watch.deleteMany({}, (err, watchLists) => {
+    if (err) {
+        console.log('Error occured in remove', err)
+    } else {
+        console.log('Removed all of watch list')
+
+        db.watch.insertMany(seed_log, (err, watchLists) => {
+            if (err) {
+                console.log('Error occured in insertMany', err)
+            } else {
+                console.log('Created', watchLists.length, "watch list entries")
+            }
+        })
+    }
+})

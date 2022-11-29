@@ -1,6 +1,6 @@
 // dependencies
 const mongoose = require("mongoose");
-console.log()
+
 // connect to MongoDB via mongoose
 const connectionString = process.env.MONGODB_URI
 mongoose.connect(
@@ -20,3 +20,6 @@ mongoose.connection.on('disconnected', () => {
 mongoose.connection.on('error', (error) => {
     console.log('mongoose error ', error);
 });
+
+module.exports.anime = require("./anime.js");
+module.exports.watch = require("./watchList.js");
