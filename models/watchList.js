@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const watchListSchema = new Schema(
     {
-        title: { type: String, default: 'Jean-Luc Picard' },
+        title: { type: String, default: 'Untitled Anime' },
         description: { type: String, required: true },
     }
 )

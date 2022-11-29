@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
     db.watch.findById(req.params.id, (err, watch) => {
         res.render("showWatchNext", {
             watch: watch,
-            tabTitle: "Star Date " + watch.starDate
+            tabTitle: " Watch Next" + watch.title
         })
     })
 })
@@ -43,7 +43,7 @@ router.get('/:id/edit', (req, res) => {
     })
 })
 
-// Edit Route (GET/Read)
+// Update Route (PUT/Update)
 router.put('/:id', (req, res) => {
     db.watch.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, watch) => {
         res.redirect('/watch/' + watch._id)

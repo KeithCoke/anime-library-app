@@ -1,114 +1,116 @@
 const db = require("./")
 
-const initial_anime = [
+ const initial_anime = [
     {
         name: 'Naruto',
-        Year: 2002,
+        year: 2002,
         image: 'https://imgur.com/Va5iIw5'
     },
     {
         name: 'One Piece',
-        Year: 1999,
+        year: 1999,
         image: 'https://imgur.com/XV2aPa2'
     },
     {
         name: 'Dragon Ball Super',
-        Year: 2015,
+        year: 2015,
         image: 'https://imgur.com/rLOXFRI'
     },
     {
         name: 'Attack On Titan',
-        Year: 2013,
+        year: 2013,
         image: 'https://imgur.com/a7rmkoS'
     },
     {
         name: 'Black Clover',
-        Year: 2017,
+        year: 2017,
         image: 'https://imgur.com/FLucOLr'
     },
     {
         name: 'My Hero Acedamia',
-        Year: 2016,
+        year: 2016,
         image: 'https://imgur.com/yaoK0Dg'
     },
     {
         name: 'Demon Slayer',
-        Year: 2019,
+        year: 2019,
         image: 'https://imgur.com/qAhA7pi'
     }
 ]
 
 const initial_watch = [
     {   title: "Dragon Ball",
-       description: 4513.3
+       description: "hdsiiusd"
     },
     {
         title: "Bleach",
-       description: 4523.3
+       description: "ddchjdsb"
     },
     {
         title: "Promise NeverLand",
-       description: 4524.2
+       description: "djjddjj"
     },
     {
         title: "Soul Eater",
-       description: 4525.6
+       description: "djdjdj"
     },
     {
         title: "Fire Force",
-       description: 4040.7
+       description: "dncduedcd"
     },
     {
         title: "Vinland Saga",
-       description: 4040.9
+       description: "dfnciucd"
     },
     {
         title: "Mob psycho",
-       description: 4041.7
+       description: "dskudshcd"
     },
     {
         title: "Neon Genisis",
-       description: 3842.3
+       description: "dnicniencid"
     },
     {
         title: "Seven Deadly Sins",
-        description: efwef
+        description: "dncidnicn"
     },
     {
         title: "Hunter x Hunter",
-       description: 3843.4
+       description: "cmdkcndn"
     },
 ]
 
 
-db.anime.deleteMany({}, (err, animes) => {
-    if (err) {
-        console.log('Error occured in remove', err)
-    } else {
-        console.log('Removed all animes')
+// db.anime.deleteMany({}, (err, animes) => {
+//     if (err) {
+//         console.log('Error occured in remove', err)
+//     } else {
+//         console.log('Removed all animes')
 
-        db.anime.insertMany(initial_anime, (err, animes) => {
-            if (err) {
-                console.log('Error occured in insertMany', err)
-            } else {
-                console.log('Created', animes.length, "animes")
-            }
-        })
-    }
-})
+//         db.anime.insertMany(initial_anime, (err, animes) => {
+//             if (err) {
+//                 console.log('Error occured in insertMany', err)
+//             } else {
+//                 console.log('Created', animes.length, "animes")
+//             }
+//         })
+//     }
+// })
 
-db.watch.deleteMany({}, (err, watchLists) => {
-    if (err) {
-        console.log('Error occured in remove', err)
-    } else {
-        console.log('Removed all of watch list')
+// db.watch.deleteMany({}, (err, watchLists) => {
+//     if (err) {
+//         console.log('Error occured in remove', err)
+//     } else {
+//         console.log('Removed all of watch list')
 
-        db.watch.insertMany(seed_log, (err, watchLists) => {
-            if (err) {
-                console.log('Error occured in insertMany', err)
-            } else {
-                console.log('Created', watchLists.length, "watch list entries")
-            }
-        })
-    }
-})
+//         db.watch.insertMany(seed_log, (err, watchLists) => {
+//             if (err) {
+//                 console.log('Error occured in insertMany', err)
+//             } else {
+//                 console.log('Created', watchLists.length, "watch list entries")
+//             }
+//         })
+//     }
+// })
+
+module.exports.seed = initial_anime

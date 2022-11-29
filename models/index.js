@@ -22,4 +22,4 @@ mongoose.connection.on('error', (error) => {
 });
 
 module.exports.anime = require("./anime.js");
-module.exports.watch = require("./watchList.js");
+module.exports.watchList = require("./watchList.js");

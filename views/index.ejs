@@ -8,9 +8,9 @@
         <header>
             <h1>AniLibrary</h1>
             <nav>
-                <li><a href="/pub">master branch</a></li>
-                <a href="/animes/new"><button>New Anime</button></a>
-                <li><a href="/new">git add -an item</a></li>
+                <button id="anime-btn">Show Menu</button>
+                <a href="/anime/new"><button>New Anime</button></a>
+                <button id="WatchNext-btn">Show List</button>
             </nav>
         </header>
         <main>
@@ -31,29 +31,40 @@
                     </ul>
                 </aside>
     
-                <div id="title">
-                    <h1>Anime Library</h1>
-                    <h3>personal library for your favorite anime</h3>
-                </div>
-            
-                <aside id="Watch List" class="close-menu">
-                    <ul>
-                        <% for (let watch of watchLists) { %>
-                            <a href="/watch/<%= watch._id %>">
-                                <li class="db-object">
-                                    
-                                    <div class="small-line-break"></div>
-                                    <i>
-                                        <%= watch.description %>
-                                    </i>
-                                </li>
-                            </a>
-                            <% } %>
-                    </ul>
-                </aside>
-            </div>
+               
 
           </main>
+          <script>
+            // Add event listeners to the button elements
+            const animeMenu = document.getElementById("animes-menu")
+            const animeBtn = document.getElementById("anime-btn")
+            const watchMenu = document.getElementById("watch-menu")
+            const watchBtn = document.getElementById("watch-btn")
+
+            animeBtn.addEventListener('click', (e) => {
+                if (e.target.innerText === 'Hide Menu') {
+                    animeMenu.classList.remove('open-menu')
+                    animeMenu.classList.add('close-menu')
+                    animeBtn.innerText = "Show Menu"
+                } else if (e.target.innerText === 'Show Menu') {
+                    animeMenu.classList.add('open-menu')
+                    animeMenu.classList.remove('close-menu')
+                    animeBtn.innerText = "Hide Menu"
+                }
+            })
+
+            watchBtn.addEventListener('click', (e) => {
+                if (e.target.innerText === 'Hide watch') {
+                    watchMenu.classList.remove('open-menu')
+                    watchMenu.classList.add('close-menu')
+                    watchBtn.innerText = "Show watch"
+                } else if (e.target.innerText === 'Show watch') {
+                    watchMenu.classList.add('open-menu')
+                    watchMenu.classList.remove('close-menu')
+                    watchBtn.innerText = "Hide watch"
+                }
+            })
+        </script>
 </div>
 </body>
 </html>

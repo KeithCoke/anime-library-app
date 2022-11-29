@@ -11,8 +11,9 @@ const port = process.env.PORT
 const db = require('./models')
 
 const animesCtrl = require('./controllers/animes')
-const watchListCtrl = require('./controllers/watchList')
+const watchListCtrl = require('./controllers/watchLists')
 
+const seed = require('./models/seed.js')
 // const anime = require('./models')
 
 // +-+-+-+-+-+-+-+-+-+-+
@@ -32,7 +33,7 @@ app.use((req, res, next) => {
 
 
 // +-+-+-+-+-+-+
-// |R|O|U|T|E|S|
+// |R|O|U|T|E|S 
 // +-+-+-+-+-+-+
 
 // app.get('/', (req, res)=> {
@@ -43,20 +44,33 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     // query animes from the database
     db.anime.find({}, (err, animes) => {
-        // query log watchLists from the database
-        // db.watchList.find({}, (err, watchLists) => {
-            // render `index.ejs` after data has been queried
+        if(err) {
+            // return error message to page
+        }
+        if(!animes.length) {
+            db.anime.insertMany(seed.seed, (err, animes) => {
+                if (err) {
+                    console.log('Error occured in insertMany', err)
+                } else {
+                    console.log('Created', animes.length, "animes")
+                    res.render('index.ejs', {
+                        animes: animes,
+                        tabTitle: 'Anime Library'
+                    })
+                }
+            })
+        } else {
+            console.log(animes.length, ' animes')
             res.render('index.ejs', {
                 animes: animes,
-                // watchLists: watchLists,
                 tabTitle: 'Anime Library'
             })
-        })
+        }
     })
-// })
+ })
 
     app.use('/anime', animesCtrl)
-    app.use('/watchNext', watchListCtrl)
+    app.use('/watch', watchListCtrl)
 
 // +-+-+-+-+-+-+-+-+
 // |L|I|S|T|E|N|E|R|

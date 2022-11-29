@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
     } else {
         req.body.visited = false
     }
-    db.Location.create(req.body, (err, anime) => {
+    db.anime.create(req.body, (err, anime) => {
         res.redirect('/anime/' + anime._id)
     })
 })
@@ -40,7 +40,7 @@ router.delete('/:id', (req, res) => {
     router.get('/:id/edit', (req, res) => {
         db.anime.findById(req.params.id, (err, anime) => {
             res.render("editAnime", {
-                location: anime,
+                anime: anime,
                 tabTitle: "Edit"
             })
         })

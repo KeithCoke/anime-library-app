@@ -1,0 +1,27 @@
+/*Scroll bar*/
+
+* {
+    scrollbar-color: rgb(108, 0, 0) transparent;
+
+}
+
+/* WebKit Browser Support (Chrome, Safari, etc) Scrollbar Styles */
+* ::-webkit-scrollbar {
+    width: 10px;
+    height: auto;
+    background-color: transparent;
+}
+
+* ::-webkit-scrollbar-thumb {
+    background-color: rgb(108, 0, 0);
+    border-radius: 0.5em;
+}
+
+/* Global Styles */
+
+.model-object {
+    margin: 0 auto;
+    background-color: rgba(95, 158, 160, 0.7);
+    padding: 1em;
+    border-radius: 1em;
+}
