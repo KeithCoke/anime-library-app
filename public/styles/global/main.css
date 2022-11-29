@@ -17,11 +17,15 @@
     border-radius: 0.5em;
 }
 
-/* Global Styles */
 
 .model-object {
     margin: 0 auto;
     background-color: rgba(95, 158, 160, 0.7);
     padding: 1em;
     border-radius: 1em;
+}
+body {
+    
+    min-height: 100vh;
+    min-width: 100vw;
 }

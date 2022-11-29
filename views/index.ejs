@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include ('./partials/head.ejs/') %>
+    <%- include ('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/styles/indexpage.css" />
 </head>
 <body>
-    <div class="body-overlay">
+   
         <header>
             <h1>AniLibrary</h1>
             <nav>
@@ -16,7 +17,7 @@
         <main>
             
             <div class="flex-container">
-                <aside id="anime-menu" class="close-menu">
+                 <!-- id="anime-menu" class="close-menu"> -->
                     <ul>
                         <% for (let anime of animes) { %>
                             <a href="/anime/<%= anime._id %>">
@@ -29,7 +30,7 @@
                             </a>
                             <% } %>
                     </ul>
-                </aside>
+                
     
                
 
@@ -65,6 +66,6 @@
                 }
             })
         </script>
-</div>
+
 </body>
 </html>

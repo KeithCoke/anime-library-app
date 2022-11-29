@@ -10,7 +10,7 @@
                 <label for="name">Name:</label>
                 <input type="text" name="name"required value="<%= anime.name %>"/>
                 <label for="year">year:</label>
-                <input type="text" name="year" value="Unaffiliated" />
+                <input type="text" name="year" value="<%= anime.year %>" />
                 <!-- <label for="classification">Classification:</label>
                 <select name="classification" >
                     <option value="station">Station</option>
@@ -24,8 +24,8 @@
                     <option value="hospitable">Hospitable</option>
                     <option value="inhospitable">Inhospitable</option>
                </select> -->
-                <label for="visited">Visited:</label>
-                <input type="checkbox" name="visited" />
+                <!-- <label for="visited">Visited:</label>
+                <input type="checkbox" name="visited" /> -->
                 <label for="image">Image:</label>
                 <input type="text" name="image" value="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" />
                 <button type="submit">Edit anime</button>
