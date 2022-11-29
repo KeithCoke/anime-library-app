@@ -44,16 +44,16 @@ app.get('/', (req, res) => {
     // query animes from the database
     db.anime.find({}, (err, animes) => {
         // query log watchLists from the database
-        db.watchList.find({}, (err, watchLists) => {
+        // db.watchList.find({}, (err, watchLists) => {
             // render `index.ejs` after data has been queried
             res.render('index.ejs', {
                 animes: animes,
-                watchLists: watchLists,
+                // watchLists: watchLists,
                 tabTitle: 'Anime Library'
             })
         })
     })
-})
+// })
 
     app.use('/anime', animesCtrl)
     app.use('/watchNext', watchListCtrl)

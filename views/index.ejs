@@ -16,7 +16,7 @@
         <main>
             
             <div class="flex-container">
-                <aside id="locations-menu" class="close-menu">
+                <aside id="anime-menu" class="close-menu">
                     <ul>
                         <% for (let anime of animes) { %>
                             <a href="/anime/<%= anime._id %>">
@@ -24,7 +24,7 @@
                                     <h3>
                                         <%= anime.name %>,
                                     </h3>
-                                    <%= anime.affiliation %>
+                                    <%= anime.year %>
                                 </li>
                             </a>
                             <% } %>
@@ -32,10 +32,27 @@
                 </aside>
     
                 <div id="title">
-                    <h1>Final Frontier</h1>
-                    <h3>A Star Trek Journey</h3>
+                    <h1>Anime Library</h1>
+                    <h3>personal library for your favorite anime</h3>
                 </div>
             
+                <aside id="Watch List" class="close-menu">
+                    <ul>
+                        <% for (let watch of watchLists) { %>
+                            <a href="/watch/<%= watch._id %>">
+                                <li class="db-object">
+                                    
+                                    <div class="small-line-break"></div>
+                                    <i>
+                                        <%= watch.description %>
+                                    </i>
+                                </li>
+                            </a>
+                            <% } %>
+                    </ul>
+                </aside>
+            </div>
+
           </main>
 </div>
 </body>
