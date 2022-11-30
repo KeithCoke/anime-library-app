@@ -1,6 +1,6 @@
 # anime-library-app
 
-1. Technoligies used were stack overflow w3 schools and the markdowns and zoom recordings from class
+1.JavaScript, HTML, CSS, Node.JS, Mongoose, Express, EJS, Railway
 
 2. Unsolved just some more styling i wanted to do
 
