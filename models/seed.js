@@ -4,7 +4,7 @@ const db = require("./")
     {
         name: 'Naruto',
         year: 2002,
-        image: 'https://imgur.com/Va5iIw5'
+        image: './public/images/newnaruto.png'
     },
     {
         name: 'One Piece',
@@ -81,36 +81,36 @@ const initial_watch = [
 ]
 
 
-// db.anime.deleteMany({}, (err, animes) => {
-//     if (err) {
-//         console.log('Error occured in remove', err)
-//     } else {
-//         console.log('Removed all animes')
+db.anime.deleteMany({}, (err, animes) => {
+    if (err) {
+        console.log('Error occured in remove', err)
+    } else {
+        console.log('Removed all animes')
 
-//         db.anime.insertMany(initial_anime, (err, animes) => {
-//             if (err) {
-//                 console.log('Error occured in insertMany', err)
-//             } else {
-//                 console.log('Created', animes.length, "animes")
-//             }
-//         })
-//     }
-// })
+        db.anime.insertMany(initial_anime, (err, animes) => {
+            if (err) {
+                console.log('Error occured in insertMany', err)
+            } else {
+                console.log('Created', animes.length, "animes")
+            }
+        })
+    }
+})
 
-// db.watch.deleteMany({}, (err, watchLists) => {
-//     if (err) {
-//         console.log('Error occured in remove', err)
-//     } else {
-//         console.log('Removed all of watch list')
+db.watchList.deleteMany({}, (err, watchLists) => {
+    if (err) {
+        console.log('Error occured in remove', err)
+    } else {
+        console.log('Removed all of watch list')
 
-//         db.watch.insertMany(seed_log, (err, watchLists) => {
-//             if (err) {
-//                 console.log('Error occured in insertMany', err)
-//             } else {
-//                 console.log('Created', watchLists.length, "watch list entries")
-//             }
-//         })
-//     }
-// })
+        db.watchList.insertMany(initial_watch, (err, watchLists) => {
+            if (err) {
+                console.log('Error occured in insertMany', err)
+            } else {
+                console.log('Created', watchLists.length, "watch list entries")
+            }
+        })
+    }
+})
 
 module.exports.seed = initial_anime

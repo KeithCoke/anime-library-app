@@ -1,13 +1,55 @@
 .flex-container {
-display: flex;
-align-items: center;
+    width: 800px;
+    justify-content: center;
+    width: 90%;
+
 
 }
-body {
-    align-items: center;
-  
+
+.index-show-anime {
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border-radius: 10%;
+    height: 400px;
 }
-.db-object {
+h3 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 300%;
+}
+
+header {
+    background-color: brown;
+    margin-bottom: 20px;
+}
+
+.index-show-anime img {
+    width: 100%;
+    height: 100%;
+}
+
+main {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0px;
+    justify-content: center;
+
+}
+
+li {
+    width: 25%;
+    padding: 15px;
+
+}
+

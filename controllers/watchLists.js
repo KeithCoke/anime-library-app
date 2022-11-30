@@ -4,7 +4,7 @@ const router = express.Router()
 
 // New Route (GET/Read)
 router.get('/new', (req, res) => {
-    res.render('newWatchNext', {
+    res.render('newWatchNext.ejs', {
         tabTitle: "Watch List"
     })
 })

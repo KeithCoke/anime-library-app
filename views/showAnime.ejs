@@ -8,11 +8,13 @@
 
 <body>
         <div class="flex-container">
+            <nav>
             <a href="/"><button>Home</button></a>
             <a href="/anime/<%= anime._id %>/edit"><button>Edit Anime</button></a>
             <form action="/anime/<%= anime._id %>?_method=DELETE" method="POST">
                 <button type="submit">Delete Anime</button>
             </form>
+            </nav>
         </div>
         <main class="flex-container">
             <div id="anime" class="model-object">

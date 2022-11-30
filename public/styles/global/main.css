@@ -2,21 +2,9 @@
 
 * {
     scrollbar-color: rgb(108, 0, 0) transparent;
-
+    margin: 0px;
+    padding: 0px;
 }
-
-/* WebKit Browser Support (Chrome, Safari, etc) Scrollbar Styles */
-* ::-webkit-scrollbar {
-    width: 10px;
-    height: auto;
-    background-color: transparent;
-}
-
-* ::-webkit-scrollbar-thumb {
-    background-color: rgb(108, 0, 0);
-    border-radius: 0.5em;
-}
-
 
 .model-object {
     margin: 0 auto;
@@ -24,8 +12,13 @@
     padding: 1em;
     border-radius: 1em;
 }
-body {
-    
-    min-height: 100vh;
-    min-width: 100vw;
+
+button {
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.5em;
+    font-size: calc(10px + 0.4em);
+    background: rgba(35, 5, 47, 0.4);
+    cursor: pointer;
 }

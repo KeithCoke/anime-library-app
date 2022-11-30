@@ -11,6 +11,7 @@
             <nav>
                 <button id="anime-btn">Show Menu</button>
                 <a href="/anime/new"><button>New Anime</button></a>
+                <a href="/watchList/new"><button>Watch List</button></a>
                 <button id="WatchNext-btn">Show List</button>
             </nav>
         </header>
@@ -20,17 +21,17 @@
                  <!-- id="anime-menu" class="close-menu"> -->
                     <ul>
                         <% for (let anime of animes) { %>
+                        <li>
                             <a href="/anime/<%= anime._id %>">
-                                <li class="db-object">
-                                    <h3>
-                                        <%= anime.name %>,
-                                    </h3>
-                                    <%= anime.year %>
-                                </li>
+                                <div class="index-show-anime">
+                                    <img src="<%= anime.image  %>" />
+                                    <h3><%= anime.name %></h3>
+                                </div>
                             </a>
-                            <% } %>
+                        </li>
+                        <% } %>
                     </ul>
-                
+                </div>
     
                
 
