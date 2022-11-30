@@ -10,7 +10,6 @@ router.get('/new', (req, res) => {
         if(err) {
 
         } else {
-            // console.log(watchList, '<-----')
             res.render('showWatchNext.ejs', {
                 tabTitle: "Watch List",
                 watchList: watchList
