@@ -30,25 +30,25 @@ router.post('/', (req, res) => {
 
 // Show Route (GET/Read)
 router.get('/:id', (req, res) => {
-    db.watch.findById(req.params.id, (err, watch) => {
+    db.watchList.findById(req.params.id, (err, watch) => {
         res.render("showWatchNext", {
             watch: watch,
-            tabTitle: " Watch Next" + watch.title
+            tabTitle: " Watch Next" + watchList.title
         })
     })
 })
 
 // Delete Route (DELETE/Delete)
 router.delete('/:id', (req, res) => {
-    db.watch.findByIdAndRemove(req.params.id, (err, watch) => {
-        res.redirect('/')
+    db.watchList.findByIdAndRemove(req.params.id, (err, watch) => {
+        res.redirect('/watchList/new')
     })
 })
 
 // Edit Route (GET/Read)
 router.get('/:id/edit', (req, res) => {
     db.watch.findById(req.params.id, (err, watch) => {
-        res.render("editWatchNext", {
+        res.render("editWatchList", {
             watch: watch,
             tabTitle: "Edit"
         })

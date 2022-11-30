@@ -3,28 +3,25 @@
 
 <head>
     <%- include ('./partials/head.ejs') %>
-        <link rel="stylesheet" href="/public/styles/" />
+        <link rel="stylesheet" href="/styles/showpage.css" />
 </head>
 
 <body>
         <div class="flex-container">
             <a href="/"><button>Home</button></a>
-            <form action="/watchList/<%= watchList._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete watch</button>
-            </form>
-            <a href='/watchList/<%= watchList._id %>/edit'><button>Edit watch</button></a>
-        
+           
+            
             <div class="flex-container">
                 <ul>
-                    <% for (let watchList of watchLists) { %>
-                    <li>
-                        <a href="/watchList/<%= watchList._id %>">
-                            <div class="index-show-watchList">
-                                
-                                <h1><%= watchList.title %></h1>
-                                <h3><%= watchList.description %></h3>
-                            </div>
-                        </a>
+                    <% for (let watch of watchList) { %>
+                        <li>
+                                <div class="index-show-watchList">
+                                    <h1><%= watch.title %></h1>
+                                    <h3><%= watch.description %></h3>
+                                </div>
+                            <form action="/watchList/<%= watch._id %>?_method=DELETE" method="POST">
+                                <button type="submit">Delete watch</button>
+                            </form>
                     </li>
                     <% } %>
                 </ul>
