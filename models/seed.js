@@ -9,7 +9,7 @@ const db = require("./")
     {
         name: 'One Piece',
         year: 1999,
-        image: 'https://static.wikia.nocookie.net/onepiece/images/6/6b/Slide_1_preview.png'
+        image: 'https://cdn.animenewsnetwork.com/thumbnails/max700x700/cms/news/102888/one-piece-zou-visual.jpeg'
     },
     {
         name: 'Dragon Ball Super',
@@ -24,18 +24,18 @@ const db = require("./")
     {
         name: 'Black Clover',
         year: 2017,
-        image: 'https://imgur.com/FLucOLr'
+        image: 'https://www.moshimoshi-nippon.jp/wp/wp-content/uploads/2021/01/ed188acdc3ce09eb10d7344da87b3a43.jpg'
     },
     {
         name: 'My Hero Acedamia',
         year: 2016,
-        image: 'https://imgur.com/yaoK0Dg'
+        image: 'https://static.wikia.nocookie.net/bokunoheroacademia/images/9/95/Season_6_Poster_3.png'
     },
     {
         name: 'Demon Slayer',
         year: 2019,
-        image: 'https://imgur.com/qAhA7pi'
-    }
+        image: 'https://www.coyotemag.fr/wp-content/uploads/2022/02/Demon-Slayer-Hinokami-Chronicles.jpg'
+    },
 ]
 
 const initial_watch = [

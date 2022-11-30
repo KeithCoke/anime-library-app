@@ -2,7 +2,7 @@
 
 1. Technoligies used were stack overflow w3 schools and the markdowns and zoom recordings from class
 
-2. Unsolved problems getting photos to pop up 
+2. Unsolved errors regarding 
 
 3. User stories 
 

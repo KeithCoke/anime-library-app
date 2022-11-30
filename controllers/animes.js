@@ -20,6 +20,7 @@ router.post('/', (req, res) => {
         res.redirect('/anime/' + anime._id)
     })
 })
+
 // GET/Read
 router.get('/:id', (req, res) => {
     db.anime.findById(req.params.id, (err, anime) => {
