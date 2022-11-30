@@ -14,7 +14,6 @@ const animesCtrl = require('./controllers/animes')
 const watchListCtrl = require('./controllers/watchLists')
 
 const seed = require('./models/seed.js')
-// const anime = require('./models')
 
 // +-+-+-+-+-+-+-+-+-+-+
 // |M|I|D|D|L|E|W|A|R|E|
@@ -24,11 +23,9 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 app.use((req, res, next) => {
-    console.log('I run for all routes');
+    console.log('running routes');
     next();
 });
-
-
 
 
 
