@@ -36,13 +36,31 @@ app.use((req, res, next) => {
 // |R|O|U|T|E|S 
 // +-+-+-+-+-+-+
 
-// app.get('/', (req, res)=> {
-    
-//     res.render('index.ejs',)
-// })
+app.use('/anime', animesCtrl)
+app.use('/watchList', watchListCtrl)
 
 app.get('/', (req, res) => {
     // query animes from the database
+    db.watchList.find({}, (err, watchList) => {
+
+        if(err) {
+
+        }
+        if(!watchList.length) {
+            db.watchList.instertMany(seed.watchList, (err, watchList) =>{
+                if (err) {
+                    console.log('Error occured in insertMany', err)
+                }else {
+                    console.log('Created', watchList.length, "watch list")
+                    res.render('showWatchNext.ejs', {
+                        watchList: watchList,
+                        tabTitle: 'Anime Library'
+                    })
+                }
+            })
+        }
+    })
+    
     db.anime.find({}, (err, animes) => {
         if(err) {
             // return error message to page
@@ -69,8 +87,6 @@ app.get('/', (req, res) => {
     })
  })
 
-    app.use('/anime', animesCtrl)
-    app.use('/watch', watchListCtrl)
 
 // +-+-+-+-+-+-+-+-+
 // |L|I|S|T|E|N|E|R|

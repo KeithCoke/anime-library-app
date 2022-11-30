@@ -1,13 +1,25 @@
 const db = require("../models")
 const express = require('express')
+const { watch } = require("../models/anime")
+const { watchList } = require("../models/seed")
 const router = express.Router()
 
 // New Route (GET/Read)
 router.get('/new', (req, res) => {
-    res.render('newWatchNext.ejs', {
-        tabTitle: "Watch List"
+    db.watchList.find({}, (err, watchList) =>{
+        if(err) {
+
+        } else {
+            // console.log(watchList, '<-----')
+            res.render('showWatchNext.ejs', {
+                tabTitle: "Watch List",
+                watchList: watchList
+            })
+        }
     })
 })
+
+
 
 // Create Route (POST/Create)
 router.post('/', (req, res) => {

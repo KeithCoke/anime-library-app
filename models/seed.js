@@ -4,22 +4,22 @@ const db = require("./")
     {
         name: 'Naruto',
         year: 2002,
-        image: './public/images/newnaruto.png'
+        image: 'https://resizing.flixster.com/yCXTNU8oxpZQ-7KZykkhFQbmSqQ=/206x305/v2/https://flxt.tmsimg.com/assets/p11944305_b_v13_aa.jpg'    
     },
     {
         name: 'One Piece',
         year: 1999,
-        image: 'https://imgur.com/XV2aPa2'
+        image: 'https://static.wikia.nocookie.net/onepiece/images/6/6b/Slide_1_preview.png'
     },
     {
         name: 'Dragon Ball Super',
         year: 2015,
-        image: 'https://imgur.com/rLOXFRI'
+        image: 'https://upload.wikimedia.org/wikipedia/en/7/74/Dragon_Ball_Super_Key_visual.jpg'
     },
     {
         name: 'Attack On Titan',
         year: 2013,
-        image: 'https://imgur.com/a7rmkoS'
+        image: 'https://static.wikia.nocookie.net/shingekinokyojin/images/d/d8/Attack_on_Titan_Season_1.jpg'
     },
     {
         name: 'Black Clover',
@@ -114,3 +114,4 @@ db.watchList.deleteMany({}, (err, watchLists) => {
 })
 
 module.exports.seed = initial_anime
+module.exports.watchList = initial_watch

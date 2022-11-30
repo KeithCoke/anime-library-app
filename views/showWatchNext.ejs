@@ -9,22 +9,27 @@
 <body>
         <div class="flex-container">
             <a href="/"><button>Home</button></a>
-            <form action="/watchNext/<%= watchNext._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete watchNext</button>
+            <form action="/watchList/<%= watchList._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete watch</button>
             </form>
-            <a href='/watchNext/<%= watchNext._id %>/edit'><button>Edit watchNext</button></a>
-        </div>
-        <main class="flex-container">
-            <div id="watchNext" class="model-object">
-                <br />
-                <h3>
-                    <%= watchNext.description %>
-                </h3>
-                <br />
-                <p>
-                    Title: <%= watchNext.title %>
-                </p>
-            </div>
+            <a href='/watchList/<%= watchList._id %>/edit'><button>Edit watch</button></a>
+        
+            <div class="flex-container">
+                <ul>
+                    <% for (let watchList of watchLists) { %>
+                    <li>
+                        <a href="/watchList/<%= watchList._id %>">
+                            <div class="index-show-watchList">
+                                
+                                <h1><%= watchList.title %></h1>
+                                <h3><%= watchList.description %></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div> -->
+
         </main>
 </body>
 
